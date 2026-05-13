@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+li.list {
+    list-style: none;
+    border: 2px solid darkred;
+    padding: 20px;
+    background: indianred;
+    width: 325px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+}
+
+#todo-ul {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+.card-button {
+    bottom: 20%;
+    background: black;
+    color: white;
+    width: 200px;
+    height: 37px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 82%;
+    left: 24%;
+}
+
+.post-name {
+    font-size: 30px;
+}
+
+.post_title {
+    text-transform: uppercase;
+}
+h2 {
+    margin: 0 30px 0 30px;
+    font-size: 45px;
+}
+#search-field {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    width: 374px;
+}
+
+.search_box {
+    margin: 30px;
+}
+.pagination {
+    place-content: center;
+    display: flex;
+    margin: 60px 0;
+}
+
+.page-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 19px;
+}
+
+.page-btn.active {
+	font-weight: 600;
+	text-decoration:underline
+}
+</style>
+</head>
+<body>
+<script src="todo.js"></script>
+<div class="todo-container">
+  <h2>Posts</h2>
+  <div class="search_box">
+    <input type="search" class="search-field"  id="search-field" onkeyup="search_text()" name="search" placeholder="Search text...">
+</div>
+<div class="todo-list" id="todo-list"></div>
+</div>
+<div class="pagination" id="pagination"></div>
+</body>
+</html>

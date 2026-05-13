@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Posts</title>
+    <style>
+
+
+.post-list-item {
+    width: 400px;
+    border-radius: 10px;
+    top: 17%;
+    left: 38%;
+    list-style: none;
+	border: 2px solid darkred;
+	padding: 20px;
+    background: cadetblue;
+}
+
+
+h2 {
+	margin: 40px;
+    font-size: 40px;
+}
+.comment-list-item {
+    border: 1px solid;
+    background: antiquewhite;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-container {
+    margin: 20px 20px 20px 20px;
+   
+}
+
+.post-container {
+    position: relative;
+}
+
+.post-list-item {
+    position: relative;
+}
+.comment-title{
+    margin-left: 20px;
+}
+
+.container-comment {
+    margin-top: 80px;
+}
+    </style>
+</head>
+
+<body>
+    <h2>Post Details</h2>
+    <div class="main-container">
+          <div id="post-container" class="post-container"></div>
+          <div class="container-comment">
+            <h3 class="comment-title">Comments</h3>
+            <div id="comment-container" class="comment-container"></div>
+          </div>
+       
+    </div>
+  
+
+      <!-- <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+    const postContainer = document.getElementById("post-container");
+    const commentContainer = document.getElementById("comment-container");
+
+    if (!postContainer || !commentContainer) {
+        console.error("Error: Required containers not found in the DOM.");
+        return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get("page");
+
+    console.log("URL ID:", urlParams);
+
+    if (!postId) {
+        document.body.innerHTML = "<h2>Invalid Post ID.</h2>";
+        return;
+    }
+
+    try {
+        const postUrl = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+        const commentsUrl = `https://jsonplaceholder.typicode.com/posts/${postId}/comments`;
+
+        const [postResponse, commentsResponse] = await Promise.all([
+            fetch(postUrl),
+            fetch(commentsUrl)
+        ]);
+
+        if (!postResponse.ok || !commentsResponse.ok) {
+            throw new Error("Failed to fetch data");
+        }
+
+        const post = await postResponse.json();
+        const comments = await commentsResponse.json();
+
+        
+        const postItem = document.createElement("div");
+        postItem.classList.add("post-list-item");
+        postItem.innerHTML = `
+            <div id="post-name"><strong>Post ${post.id}</strong></div>
+            <div id="post-title"><strong>Post Title:</strong> ${post.title}</div>
+            <p class="post-comment"><strong>Body:</strong> ${post.body}</p>
+        `;
+        postContainer.appendChild(postItem);
+
+    
+        comments.forEach((comment) => {
+            const commentsList = document.createElement("div");
+            commentsList.classList.add("comment-list-item");
+            commentsList.innerHTML = `
+                <div class="comments">
+                    <ul id="comments-listing">
+                        <li> 
+                            <p id="comment-name"><strong>User:</strong> ${comment.name}</p>
+                            <p id="comment-email"><strong>Email:</strong> ${comment.email}</p>
+                            <p class="comment-content">${comment.body}</p>
+                        </li>
+                    </ul>
+                </div>
+            `;
+            commentContainer.appendChild(commentsList);
+        });
+
+    } catch (error) {
+        console.error("Error:", error.message);
+        document.body.innerHTML = "<h2>Error loading data.</h2>";
+    }
+});
+      </script> -->
+      <script src="todo.js"></script>
+</body>
+</html>
+
